@@ -36,7 +36,6 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do
-
   @user = User.find_by(:username => params[:username])
  
     if @user && @user.authenticate(params[:password])
@@ -47,7 +46,6 @@ class ApplicationController < Sinatra::Base
       redirect "/failure"
     end
   end
-
 
   get '/failure' do
     erb :failure
